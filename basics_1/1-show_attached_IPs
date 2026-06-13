@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-# Pipe input from ifconfig to get all active ipv4 addresses
-ifconfig | grep "inet " | cut -d " " -f 10
+hostname -I | tr ' ' '\n' | sed '/^$/d'
